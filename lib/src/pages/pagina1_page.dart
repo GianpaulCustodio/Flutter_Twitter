@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:app1/src/twitter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,7 +13,14 @@ class Pagina1Page extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: FaIcon(FontAwesomeIcons.solidHeart),
-            onPressed: () {},
+            onPressed: () {
+              //Navigator.push(  -> Entrar a otra página
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      //CupertinoPageRoute -> La página se desliza desde la derecha y sale en sentido inverso
+                      builder: (BuildContext context) => Pagina1Page()));
+            },
           ),
           IconButton(
             icon: Icon(Icons.navigate_next),
@@ -21,7 +29,7 @@ class Pagina1Page extends StatelessWidget {
                   context,
                   CupertinoPageRoute(
                       //CupertinoPageRoute -> La página se desliza desde la derecha y sale en sentido inverso
-                      builder: (BuildContext context) => Pagina1Page()));
+                      builder: (BuildContext context) => TwitterPage()));
             },
           )
         ],
